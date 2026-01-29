@@ -3,16 +3,11 @@ name: Super-Linter
 
 "on":
   push:
-    branches: [main, master]
   pull_request:
-    branches: [main, master]
+  merge_group:
 
-permissions:
-  contents: read
-  packages: read
-  issues: write
-  pull-requests: write
-  statuses: write
+# Don't grant any access by default
+permissions: {}
 
 jobs:
   build:
@@ -33,7 +28,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           # super-linter needs the full git history to get the
           # list of files that changed across commits
