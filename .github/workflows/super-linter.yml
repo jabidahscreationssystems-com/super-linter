@@ -1,7 +1,7 @@
 ---
 name: Super-Linter
 
-on:
+"on":
   push:
     branches: [main, master]
   pull_request:
@@ -41,7 +41,7 @@ jobs:
           persist-credentials: false
 
       - name: Super-linter
-        uses: super-linter/super-linter@v8.4.0 # x-release-please-version
+        uses: super-linter/super-linter@v8.4.0  # x-release-please-version
         env:
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
